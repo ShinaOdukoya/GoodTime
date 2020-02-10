@@ -1,8 +1,9 @@
 package com.goodTime.config;
 
+import java.util.List;
+
 import javax.sql.DataSource;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,12 +20,16 @@ import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandl
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
+import com.goodTime.dao.ProviderDao;
+import com.goodTime.daoimpl.ProviderDaoImpl;
+import com.goodTime.service.ProviderService;
+
+
 
 @Configuration
-@ComponentScan("com.shina.springdemo")
+@ComponentScan("com.goodTime")
 @EnableWebMvc
 public class WebMvcConfig implements WebMvcConfigurer {
-	
 	
 	@Bean
 	public DataSource dataSource() {
@@ -47,6 +52,11 @@ public class WebMvcConfig implements WebMvcConfigurer {
 		registry.addViewController("/").setViewName("home");
 //		<mvc:view-controller path="/" view-name="home">
 	}
+	
+//	@Bean
+//	public ProviderDao getUserDao() {
+//		return new ProviderDaoImpl(dataSource());
+//	}
 	
 
 }

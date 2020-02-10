@@ -39,18 +39,11 @@
 	<h2>Submit your location for a list of Organizations</h2>
 	
 	<div style="text-align:center">
-		<form action="listOrgs">
+		<form action="listOrgs" method="get">
 			<input type="text" name="locationName"><br/>
 			<input type="submit" name="Get Organizations"><br/>
 		</form>
 	</div>
-	
-	
-	
-	
-	
-	
-	
 	
 </body>
 </html>
